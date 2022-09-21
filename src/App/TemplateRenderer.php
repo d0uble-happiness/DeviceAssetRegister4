@@ -8,6 +8,9 @@ class TemplateRenderer
 {
     public function render($file, array $data = [])
     {
+        // Always load templates from the templates folder.
+        $file = PROJECT_ROOT . 'templates/' . $file;
+
         ob_start();
         extract($data);
         require $file;

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 return [
     'database' => [
-        'dsn'      => 'sqlite:../data/app.db', # will be created if it doesn't exist.
+        'dsn'      => 'sqlite:'.__DIR__.'/../data/app.db', # will be created if it doesn't exist.
         'username' => '',
         'password' => '',
         'options'  =>  [

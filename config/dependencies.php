@@ -6,13 +6,13 @@ use App\TemplateRenderer;
 use App\Device\DeviceMapper;
 use App\Device\DeviceController;
 
-$config = require 'settings.php';
+$config = require __DIR__ . '/settings.php';
 
 $pdo = new \PDO(
-    $config['database']['dsn'],  
+    $config['database']['dsn'],
     $config['database']['username'],
     $config['database']['password'],
-    $config['database']['options'],
+    $config['database']['options']
 );
 $name = $pdo->getAttribute(PDO::ATTR_DRIVER_NAME);
 if ($name === 'sqlite') {

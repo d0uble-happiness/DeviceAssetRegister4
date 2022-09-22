@@ -9,7 +9,7 @@ class DeviceMapper
   ) {
   }
 
-  public function getById(int $assetTag): bool | array
+  public function getById(string $assetTag): bool | array
   {
     $sql = '
     SELECT * FROM devices WHERE assetTag = :assetTag
@@ -75,7 +75,7 @@ class DeviceMapper
     );
   }
 
-  public function delete(int $assetTag): bool
+  public function delete(string $assetTag): bool
   {
     $sql = '
             DELETE FROM devices

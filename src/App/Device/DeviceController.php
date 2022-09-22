@@ -11,8 +11,8 @@ use App\Device\DeviceMapper;
 class DeviceController
 {
     public function __construct(
-        private DeviceMapper $mapper,
-        private TemplateRenderer $template
+        DeviceMapper $mapper,
+        TemplateRenderer $template
     ) {
     }
 
@@ -23,7 +23,19 @@ class DeviceController
             return (new Responder($this->template))->notFound();
         }
         return $this->template->render(
-            '../templates/home.php',
+            /*
+             * This is a good example to show how relative paths work.
+             * This is/was working because the "working directory" is the public
+             * folder, that's why "../templates" work. From this file POV, which
+             * is located in src/App/Device, "../templates" is NOT a valid path.
+             * I added a small helper constant in index.php that help having
+             * predictable paths and I changed the template renderer to use it,
+             * so loading templates is easier, as you can see below there's no
+             * need to reference relative paths, all the files will be loaded
+             * "from" the templates folder.
+             */
+//            '../templates/home.php',
+            'home.php',
             [
                 'records' => $data,
                 'view' => $this->template

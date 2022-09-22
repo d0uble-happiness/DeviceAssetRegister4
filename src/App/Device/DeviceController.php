@@ -32,7 +32,7 @@ class DeviceController
         );
     }
 
-    public function read(int $assetTag)
+    public function read(string $assetTag)
     {
         $data = $this->mapper->getById($assetTag);
         if (! $data) {
@@ -76,7 +76,7 @@ class DeviceController
         header("Location: /");
     }
 
-    public function edit(int $assetTag)
+    public function edit(string $assetTag)
     {
         $data = $this->mapper->getById($assetTag);
         if (! $data) {
@@ -115,7 +115,7 @@ class DeviceController
         header("Location: /");
     }
 
-    public function deleteRequest(int $assetTag)
+    public function deleteRequest(string $assetTag)
     {
         $data = $this->mapper->getById($assetTag);
         if (! $data) {
@@ -130,7 +130,7 @@ class DeviceController
         );
     }
 
-    public function delete(int $assetTag)
+    public function delete(string $assetTag)
     {
         $data = $this->mapper->getById($assetTag);
         if (! $data) {

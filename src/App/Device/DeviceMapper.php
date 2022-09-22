@@ -38,7 +38,7 @@ class DeviceMapper
   public function create(array $data)
   {
     $sql = "INSERT INTO devices(assetTag, assignedTo, dateBought, dateDecommissioned, deviceType, operatingSystem) 
-            VALUES (:assetTag, :assignedTo, :dateBought', :dateDecommissioned', :deviceType, :operatingSystem)";
+            VALUES (:assetTag, :assignedTo, :dateBought, :dateDecommissioned, :deviceType, :operatingSystem)";
     $stmt = $this->pdo->prepare($sql);
     return $stmt->execute(
       [

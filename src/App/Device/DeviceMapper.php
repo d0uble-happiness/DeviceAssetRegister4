@@ -60,7 +60,7 @@ class DeviceMapper
     dateBought = :dateBought, 
     dateDecommissioned = :dateDecommissioned, 
     deviceType = :deviceType, 
-    operatingSystem = :operatingSystem, 
+    operatingSystem = :operatingSystem 
     WHERE assetTag = :assetTag";
     $stmt = $this->pdo->prepare($sql);
     return $stmt->execute(

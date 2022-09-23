@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Dashboard</title>
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <h2>Devices Details</h2>
